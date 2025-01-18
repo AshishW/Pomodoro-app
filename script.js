@@ -7,14 +7,11 @@ let state = true;
 const gradients = [
 'linear-gradient(to right, #4e54c8, #8f94fb)',
 'linear-gradient(to right, #667eea, #764ba2)',
-'linear-gradient(to right,rgb(255, 142, 161), #ff7eb3)',
 'linear-gradient(to right, #43cea2, #185a9d)',
 'linear-gradient(to right, #ff9966,rgb(72, 39, 40))',
 'linear-gradient(to right, #56ccf2, #2f80ed)',
 'linear-gradient(to right, #00c6ff, #0072ff)',
-'linear-gradient(to right, #f7971e, #ffd200)',
 'linear-gradient(to right, #00b09b, #96c93d)',
-'linear-gradient(to right,rgb(255, 143, 112), #f7b733)'
 ];
 
 
