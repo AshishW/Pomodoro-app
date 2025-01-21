@@ -1,18 +1,11 @@
 const bells = new Audio('./sounds/bell.wav');
 const startBtn = document.querySelector('.btn-start');
 const session = document.querySelector('.minutes');
+const moodPlayer = document.querySelector('#mood-audioplayer');
+const moodContainer = document.querySelector('.mood-ctrl-container')
 let myInterval;
 let backgroundInterval;
 let state = true;
-const gradients = [
-'linear-gradient(to right, #4e54c8, #8f94fb)',
-'linear-gradient(to right, #667eea, #764ba2)',
-'linear-gradient(to right, #43cea2, #185a9d)',
-'linear-gradient(to right, #ff9966,rgb(72, 39, 40))',
-'linear-gradient(to right, #56ccf2, #2f80ed)',
-'linear-gradient(to right, #00c6ff, #0072ff)',
-'linear-gradient(to right, #00b09b, #96c93d)',
-];
 
 
 const appTimer = () =>{
@@ -44,12 +37,8 @@ const appTimer = () =>{
             }
         }
 
-        function changeBackground(){
-            const appHTML = document.querySelector('html');
-            appHTML.style.backgroundImage = gradients[Math.floor(Math.random()*gradients.length)];
-        }
+
         myInterval = setInterval(updateSeconds, 1000);
-        backgroundInterval = setInterval(changeBackground, 60000);
 
     }else{
         alert('Session has already Started');
@@ -57,4 +46,28 @@ const appTimer = () =>{
 }
 
 
+
+function moodPlayerHandler(e){
+    const button = e.target;
+    const soundFile = button.getAttribute('data-sound');
+    const buttonText = button.textContent;
+    const appHTML = document.querySelector('html')
+    switch (buttonText){
+        case "🌦️":
+            appHTML.style.backgroundImage = "linear-gradient(to right, #4e54c8, #8f94fb)"
+            break;
+        case "🔥":
+            appHTML.style.backgroundImage = "linear-gradient(to right,rgb(183, 102, 64),rgb(209, 147, 102))"
+            break;
+        case "🌊":
+            appHTML.style.backgroundImage = "linear-gradient(to right,rgb(78, 147, 200),rgb(143, 211, 251))"
+    }
+    if (soundFile) {
+      moodPlayer.src = soundFile; 
+      moodPlayer.play();          
+    }
+}
+
 startBtn.addEventListener("click", appTimer);
+
+moodContainer.addEventListener("click", moodPlayerHandler);
