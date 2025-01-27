@@ -16,12 +16,6 @@ This Pomodoro Timer is a simple web application built using HTML, CSS, and JavaS
 2. **Select Mood Sound**: Click on one of the mood buttons to play a background sound and change the background gradient.
 3. **Work and Relax**: Focus on your task until the timer rings, then take a short break before starting the next session.
 
-### Technologies Used
-
-- **HTML**: For the structure of the app.
-- **CSS**: For styling and layout.
-- **JavaScript**: For the timer functionality and interactive features.
-
 ### How It Works
 
 - **HTML Structure**: The HTML file defines the structure of the app, including the timer display, start button, and mood control buttons. Data attributes (`data-sound`) are used to store the paths to the sound files for each mood button.
